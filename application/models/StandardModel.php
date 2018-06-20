@@ -23,10 +23,22 @@ class StandardModel extends CI_MODEL {
 		$this->table = "Your Table Name";
 	}
 
+   /*
+	 * Select all query from the table 
+	 */
+	public function select_all($id)
+	{
+		  
+		  $select = $this->db->select('*')
+		  					 ->get($this->table);
+
+		  return  $select->result();
+	}
 
 	/*
-	 * Select query from the table 
+	 * Select where query from the table 
 	 */
+
 	public function select_from_where($id)
 	{
 		  
